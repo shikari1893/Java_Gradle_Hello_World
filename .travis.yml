@@ -33,7 +33,6 @@ deploy:
     - dist/
     - hello_world_build.tar.gz
     - *.gz
-    - *
   
   on:
     tags: false
