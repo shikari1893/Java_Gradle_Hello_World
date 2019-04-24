@@ -3,6 +3,16 @@ script:
   - gradle clean build
   - tar -zcf hello_world_build.tar.gz build
   - ls -R
+
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://$GITPERM@github.com/drlehr/java-hello-world-with-gradle  --tags
+  - echo "finishing before_deploy"
+  - echo $GIT_TAG
+  - ls -R
   
 deploy:
   provider: releases
