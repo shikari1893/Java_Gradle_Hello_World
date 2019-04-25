@@ -19,6 +19,7 @@ before_deploy:
   
 deploy:
   provider: releases
+  file_glob: true
   api_key:
     secure: $GITPERM
   file: 
