@@ -35,7 +35,7 @@ dependencies {
 // ****** Comment this out on the remote repository so that Travis CI will build ****** 
 
 test {
-    useJUnitPlatform()
+//    useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
     }
