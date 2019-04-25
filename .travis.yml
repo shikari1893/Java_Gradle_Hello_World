@@ -1,7 +1,8 @@
 language: java
 script: 
   - gradle clean build
-  - tar -zcf hello_world_build.tar.gz build
+  - tar -zcf hello_world_test_reports.tar.gz build/reports
+  - tar -zcf hello_world_executable_distributions.tar.gz build/dist
   - ls -R
 
 before_deploy:
@@ -19,8 +20,9 @@ deploy:
   api_key:
     secure: $GITPERM
   file: 
-    - "README.md"
-    -  hello_world_build.tar.gz 
+    - README.md
+    - hello_world_test_reports.tar.gz 
+    - hello_world_executable_distributions.tar.gz
   skip_cleanup: true
   on:
     tags: false
