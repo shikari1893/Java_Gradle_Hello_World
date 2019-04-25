@@ -4,28 +4,21 @@
  *
  */
 
-
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
-// tag::repositories[]
 repositories {
     mavenCentral()
 }
-// end::repositories[]
 
-// tag::jar[]
 jar {
     baseName = 'jb-hello-world'
     version =  '0.1.0'
 }
-// end::jar[]
 
-// tag::dependencies[]
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -38,6 +31,8 @@ dependencies {
 // warning: unknown enum constant Status.STABLE
     testCompile "org.apiguardian:apiguardian-api:1.0.0"
 }
+
+// ****** Comment this out on the remote repository so that Travis CI will build ****** 
 
 test {
     useJUnitPlatform()
