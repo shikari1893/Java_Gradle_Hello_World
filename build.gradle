@@ -18,13 +18,13 @@ repositories {
     mavenCentral()
 }
 
-version =  '1.0.0'
-project.version = scmVersion.version
+
+//project.version = scmVersion.version
 
 
 jar {
     baseName = 'jb-hello-world'
-    version = major_version
+    version = version
     
 }
 
