@@ -7,6 +7,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
+apply plugin: 'pl.allegro.tech.build.axion-release' version '1.13.6'
 
 mainClassName = 'hello.HelloWorld'
 
@@ -14,9 +15,11 @@ repositories {
     mavenCentral()
 }
 
+project.version = scmVersion.version
+
 jar {
     baseName = 'jb-hello-world'
-    version =  '1.0.0'
+    /*version =  '1.0.0'*/
 }
 
 /* 1.8 means Java 8 or above */
