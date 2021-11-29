@@ -18,11 +18,13 @@ repositories {
     mavenCentral()
 }
 
+version =  '1.0.0'
 project.version = scmVersion.version
+
 
 jar {
     baseName = 'jb-hello-world'
-    version =  '1.0.0'
+    
 }
 
 /* 1.8 means Java 8 or above */
