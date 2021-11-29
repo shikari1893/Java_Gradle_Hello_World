@@ -24,6 +24,7 @@ project.version = scmVersion.version
 
 jar {
     baseName = 'jb-hello-world'
+    version = major_version
     
 }
 
