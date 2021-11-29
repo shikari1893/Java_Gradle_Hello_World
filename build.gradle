@@ -3,11 +3,14 @@
  * by 'jabed' at '11/14/15 7:37 PM' with Gradle 2.8
  *
  */
+ 
+plugins {
+    id 'pl.allegro.tech.build.axion-release' version '1.13.6'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
-apply plugin: 'pl.allegro.tech.build.axion-release' version '1.13.6'
 
 mainClassName = 'hello.HelloWorld'
 
