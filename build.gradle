@@ -96,7 +96,7 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task versionTxt()  {
     doLast {
         new File(projectDir, "version.txt").text = """
- Version: $version+"."+System.getenv('BUILD_NUMBER')
+ Version: $version.System.env('BUILD_NUMBER')
 
 
 """
