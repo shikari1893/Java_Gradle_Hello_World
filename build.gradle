@@ -97,10 +97,9 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task versionTxt()  {
     doLast {
         new File(projectDir, "version.txt").text = """
-Version: $version
-//Revision: ${grgit.head().abbreviatedId}
-//Buildtime: ${new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date())}
-//Application-name: foobarbaz app
+ Version: $version
+
+
 """
     }
 }
