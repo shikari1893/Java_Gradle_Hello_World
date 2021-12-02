@@ -24,7 +24,7 @@ repositories {
 
 jar {
     baseName = 'jb-hello-world'
-    version = 1.0_System.getenv('BUILD_NUMBER')
+    version = 1.0.System.getenv('BUILD_NUMBER')
     
 }
 
