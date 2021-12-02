@@ -27,7 +27,7 @@ jar {
     baseName = 'jb-hello-world'
        
 }
-version = '1.0.0'
+
 
 
 /* 1.8 means Java 8 or above */
@@ -96,7 +96,7 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task versionTxt()  {
     doLast {
         new File(projectDir, "version.txt").text = """
- Version: $version
+ Version: $version+"."+System.getenv('BUILD_NUMBER')
 
 
 """
