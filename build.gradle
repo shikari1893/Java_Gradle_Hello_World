@@ -20,11 +20,24 @@ repositories {
 }
 
 
+buildscript {
+    repositories {
+         mavenCentral()
+    }
+
+    dependencies {
+        //Add dependencies for build script, so we can access Git from our build script     
+        classpath 'org.ajoberstar:grgit:1.6.0'
+    }
+}
+
+
 //project.version = scmVersion.version
 
 
 jar {
     baseName = 'jb-hello-world'
+    version = 1.0.0
        
 }
 
@@ -93,15 +106,17 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 }
 
 
-task versionTxt()  {
-    doLast {
-        new File(projectDir, "version.txt").text = """
- Version: $version.System.env('BUILD_NUMBER')
 
+task createGitTag {                                                      
+def grGit = Grgit.open(dir: '${projectDir}')    
+// create a tag with new  name and commt message    
+grGit.tag.add(name: '1.0.0', message: 'Create a new tag using gradle tag')           
+// push
+grGit.push(tags: true)     
+//clean resource
+grGit.close()                                         
+}    
 
-"""
-    }
-}
 
 
 
