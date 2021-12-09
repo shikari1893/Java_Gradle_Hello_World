@@ -114,6 +114,8 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task createGitTag {
 doLast{
 
+def version = "1.1.1"
+
 exec {
       
       commandLine 'sh', '-c', "git status"
