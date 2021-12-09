@@ -117,6 +117,8 @@ doLast{
 exec {
       
       commandLine 'sh', '-c', "git status"
+      commandLine 'sh', '-c', "git tag -a $(version) -m "created tag for version" "
+      
     }
 
 
