@@ -112,7 +112,8 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 
 
 
-task createGitTag {                                                      
+task createGitTag { 
+doLast {
 def grGit = Grgit.open(dir : "${project.rootDir}")    
 // create a tag with new  name and commt message
 grGit.tag.add(name: '1.0.0', message: 'Create a new tag using gradle tag')           
@@ -121,6 +122,7 @@ grGit.push(tags: true)
 //clean resource
 grGit.close()                                         
 }    
+}
 
 
 
