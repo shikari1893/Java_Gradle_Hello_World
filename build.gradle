@@ -112,13 +112,14 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 
 ext {
   releaseVersion = System.getenv('BUILD_NUMBER')
-  gc = System.getenv('GIT_COMMIT')
+  String gc =  System.getenv('GIT_COMMIT')
+	 String git_commit = gc[0..11]
 }
 
 task createGitTag {
 doLast{
 
-def version = "1.1.6_${releaseVersion}_${gc}"
+def version = "1.1.6_${releaseVersion}_${git_commit}"
 def tag = "git tag -a ${version} -m 'tagging a commit'"
 def push = "git push origin --tags"
 
