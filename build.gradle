@@ -111,8 +111,19 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 }
 
 
+task createGitTag {
+doLast{
 
-task createGitTag { 
+exec {
+      
+      commandLine 'sh', '-c', "git status"
+    }
+
+
+}
+}
+
+/*task createGitTag { 
 doLast {
 def grGit = Grgit.open(dir : "${project.rootDir}")    
 // create a tag with new  name and commt message
@@ -122,7 +133,7 @@ grGit.push(tags: true)
 //clean resource
 grGit.close()                                         
 }    
-}
+}*/
 
 
 
