@@ -114,9 +114,9 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task createGitTag {
 doLast{
 
-def version = "1.1.4"
-def tag = "git tag ${version}"
-def push = "git push --tags"
+def version = "1.1.5"
+def tag = "git tag -a ${version} -m 'tagging a commit'"
+def push = "git push origin --tags"
 
 exec {
       commandLine 'sh', '-c', "git status"      
