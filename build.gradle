@@ -115,11 +115,11 @@ task createGitTag {
 doLast{
 
 def version = "1.1.2"
-def tag = "git tag ${version}"
+def tag = "git tag -a ${version} -m"
 def push = "git push origin --tags"
 
 exec {
-      
+      commandLine 'sh', '-c', "git config --global push.followTags true"
       commandLine 'sh', '-c', "git status"
       commandLine 'sh', '-c', "${tag}"
       commandLine 'sh', '-c', "${push}"
