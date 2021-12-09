@@ -117,7 +117,7 @@ def grGit = Grgit.open("${project.rootDir}")
 // create a tag with new  name and commt message    
 grGit.tag.add(name: '1.0.0', message: 'Create a new tag using gradle tag')           
 // push
-grGit.push(tags: true)     
+grGit.push(remote:"${branch}")     
 //clean resource
 grGit.close()                                         
 }    
