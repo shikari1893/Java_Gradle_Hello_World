@@ -116,7 +116,7 @@ doLast{
 
 def version = "1.1.2"
 def tag = "git tag -a ${version} "
-def push = "git push origin --tags -f"
+def push = "git push --tags"
 
 exec {
       commandLine 'sh', '-c', "git config --global push.followTags true"
