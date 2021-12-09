@@ -115,11 +115,11 @@ task zipTest(type: Zip, dependsOn: distSetup) {
 task createGitTag {                                                      
 def grGit = Grgit.open("${project.rootDir}")    
 // create a tag with new  name and commt message
-def tagName = "1.0.0_1"
+def tagName = "1.0.0"
 def branch = "master"
 grGit.tag.add(name: tagName, message: 'Create a new tag using gradle tag')           
 // push
-grGit.push(remote:"${branch}")     
+grGit.push(remote:"branch")     
 //clean resource
 grGit.close()                                         
 }    
