@@ -119,12 +119,17 @@ def tag = "git tag -a ${version} "
 def push = "git push --tags"
 
 exec {
-      commandLine 'sh', '-c', "git config --global push.followTags true"
-      commandLine 'sh', '-c', "git status"
-      commandLine 'sh', '-c', "${tag}"
-      commandLine 'sh', '-c', "${push}"
-      
+      commandLine 'sh', '-c', "git status"      
     }
+    
+exec{
+     commandLine 'sh', '-c', "${tag}"
+    }
+    
+exec{
+    commandLine 'sh', '-c', "${push}"
+    }
+ 
 
 
 }
